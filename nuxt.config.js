@@ -53,6 +53,13 @@ module.exports = {
         //   exclude: /(node_modules)/
         // })
       }
+    },
+    // postcss: [],
+    preset: {
+      // Change the postcss-preset-env settings
+      autoprefixer: {
+        grid: true
+      }
     }
   }
 }

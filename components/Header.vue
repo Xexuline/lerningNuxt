@@ -12,9 +12,11 @@
 </template>
 
 <style lang="scss" scoped>
+  @import '@/assets/styles/config.scss';
+  
   .nav {
     color: red;
-    background-color: #009688;
+    background-color: $primary;
     color: rgba(255,255,255,.84);
     width: 100vw;
     height: 4rem;  
@@ -30,6 +32,10 @@
     }
     &__item{
       color: blue
+    }
+
+    @include media(md){
+      
     }
   }
 </style>
