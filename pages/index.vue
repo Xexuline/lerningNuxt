@@ -46,6 +46,9 @@ export default {
 .container {
   margin: 0 auto;
   min-height: 100vh;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 154rem;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -8,6 +8,8 @@ $mobile: 48em;
 $tablet: 62em;
 $desktop: 64.063em;
 
+$maxWidth: 154rem;
+
 
 @function px2rem($pixels, $context: $font-base) {
   @return ($pixels / $context) * 1rem;

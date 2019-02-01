@@ -1,6 +1,6 @@
 <template>
   <nav class="nav nav__fixed nav__fixed-top">
-    <ul>
+    <ul class="nav__list">
       <li class="nav__item">
         <nuxt-link to="/">Curratelo.es</nuxt-link>
       </li>
@@ -18,7 +18,7 @@
     color: red;
     background-color: $primary;
     color: rgba(255,255,255,.84);
-    width: 100vw;
+    width: 100%;
     height: 4rem;  
     display: flex;
 
@@ -35,6 +35,14 @@
     }
 
     @include media(md){
+      
+    }
+    
+    &__list{
+      max-width: $maxWidth;
+      display:flex;
+      flex-flow:row nowrap;
+      justify-content: space-around;
       
     }
   }
