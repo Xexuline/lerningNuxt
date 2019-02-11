@@ -5,17 +5,29 @@ $secondary: #f5f5f5;
 //special colors
 $muted: #777;
 
+// Fonts
+$font-base: 10;
 
-$breakpoint-md: 767px;
-$breakpoint-lg: 1023px;
+$mobile: 48em;
+$tablet: 62em;
+$desktop: 64.063em;
 
+$maxWidth: 154rem;
+
+
+@function px2rem($pixels, $context: $font-base) {
+  @return ($pixels / $context) * 1rem;
+}
 
 //mixins
 @mixin media($media) {
-  @if $media == md {
-    @media (min-width: $breakpoint-md) { @content; }
+  @if $media == sm {
+    @media (min-width: $mobile) { @content; }
+  }
+  @else if media == md {
+    @media (min-width: $tablet) { @content; }
   }
   @else if $media == lg {
-    @media (min-width: $breakpoint-lg) { @content; }
+    @media (min-width: $desktop) { @content; }
   }
 }

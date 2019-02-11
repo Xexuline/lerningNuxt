@@ -1,16 +1,14 @@
 <template>
-  <header>
-    <nav class="nav__fixed nav__fixed-top">
-      <ul CLASS="nav">
-        <li class="nav__item">
-          <nuxt-link to="/">Curratelo.es</nuxt-link>
-        </li>
-        <li class="nav__item">
-          <nuxt-link to="/realtime">Realtime</nuxt-link>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="nav__fixed nav__fixed-top">
+    <ul class="nav">
+      <li class="nav__item">
+        <nuxt-link to="/">Curratelo.es</nuxt-link>
+      </li>
+      <li class="nav__item">
+        <nuxt-link to="/realtime">Realtime</nuxt-link>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <style lang="scss" scoped>
@@ -46,6 +44,14 @@
     }
 
     @include media(md){
+      
+    }
+    
+    &__list{
+      max-width: $maxWidth;
+      display:flex;
+      flex-flow:row nowrap;
+      justify-content: space-around;
       
     }
   }
