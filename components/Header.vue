@@ -1,37 +1,48 @@
 <template>
-  <nav class="nav nav__fixed nav__fixed-top">
-    <ul>
-      <li class="nav__item">
-        <nuxt-link to="/">Curratelo.es</nuxt-link>
-      </li>
-      <li>
-        <nuxt-link to="/realtime">Realtime</nuxt-link>
-      </li>
-    </ul>
-  </nav>
+  <header>
+    <nav class="nav__fixed nav__fixed-top">
+      <ul CLASS="nav">
+        <li class="nav__item">
+          <nuxt-link to="/">Curratelo.es</nuxt-link>
+        </li>
+        <li class="nav__item">
+          <nuxt-link to="/realtime">Realtime</nuxt-link>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <style lang="scss" scoped>
   @import '@/assets/styles/config.scss';
   
   .nav {
-    color: red;
+    align-items: center;
     background-color: $primary;
-    color: rgba(255,255,255,.84);
-    width: 100vw;
-    height: 4rem;  
+    color: $secondary;
     display: flex;
+    flex-flow: row nowrap;
+    height: 4rem;
+    justify-content: space-around;
+    list-style: none;
+    width: 100vw;
 
     &__fixed{
       position: fixed;
       z-index: 1;
+
       &-top{
-        top:0;
         left: 0;
+        top:0;
       }
     }
     &__item{
-      color: blue
+      color: blue;
+      padding: 0;
+
+      & a, a:link, a:visited, a:hover, a:active{
+          text-decoration: none;
+      }
     }
 
     @include media(md){
