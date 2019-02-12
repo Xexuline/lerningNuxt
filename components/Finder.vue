@@ -2,7 +2,7 @@
   <article class="finder--container">
     <h2>{{ title }}</h2>
     <div class="finder--box">
-      <input type="text" class="finder--input" placeholder="Buscar por...">
+      <input type="text" class="finder--input" placeholder="Buscar por..." v-model="searchString" @keyup="emitChanges">
       <span class="fa fa-search"></span>
     </div>
   </article>
@@ -12,8 +12,18 @@ export default {
   props:{
     offers: {type: Number, default: 0},
   },
+  data(){
+    return {
+      searchString: ''
+      }
+  },
   mounted(){
     console.log(this.props)
+  },
+  methods:{
+    emitChanges(ev){
+      this.$emit('search', this.searchString)
+    }
   },
   computed: {
     title: function(){

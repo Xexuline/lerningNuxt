@@ -2,7 +2,7 @@
   <section class="container">
     <Header />
     <div class="offer-container">
-      <Finder :offers="0"/>
+      <Finder :offers="0" @search="findJobs"/>
     </div>
     <Footer />
   </section>
@@ -21,7 +21,9 @@ export default {
     Finder,
   },
   methods: {
-
+    findJobs(str){
+      console.log(str)
+    }
   },
 }
 </script>
