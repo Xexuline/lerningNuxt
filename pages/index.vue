@@ -3,6 +3,7 @@
     <Header />
     <div class="offer-container">
       <Finder :offers="0" @search="findJobs"/>
+      <Offer v-for="(jobOffer, index) in offers" :job="jobOffer" :key="index"/>
     </div>
     <Footer />
   </section>
@@ -13,16 +14,33 @@
 import Footer from '~/components/Footer.vue'
 import Header from '~/components/Header.vue'
 import Finder from '~/components/Finder.vue'
+import Offer from '~/components/Offer.vue'
+import axios from 'axios'
 
 export default {
+  
   components: {
     Header,
     Footer,
     Finder,
+    Offer,
+  },
+
+  asyncData(){
+   return axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(response => {
+        console.log(response  )
+        return {
+          offers: response.data,
+          }
+      })
+  },
+  data(){
+    return { }
   },
   methods: {
     findJobs(str){
-      console.log(str)
+      
     }
   },
 }

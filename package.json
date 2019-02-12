@@ -14,12 +14,12 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "nuxt": "^2.3.4",
     "postcss-loader": "^3.0.0",
-    "postcss-preset-env": "^6.5.0",
-    "postcss-px2rem": "^0.3.0"
+    "postcss-preset-env": "^6.5.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
@@ -47,8 +47,8 @@
   },
   "config": {
     "nuxt": {
-     "port": 8080,
-     "host": "0.0.0.0"
+      "port": 8080,
+      "host": "0.0.0.0"
     }
   }
 }
