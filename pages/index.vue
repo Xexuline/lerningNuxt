@@ -1,6 +1,9 @@
 <template>
   <section class="container">
     <Header />
+    <div class="offer-container">
+      <Finder :offers="0"/>
+    </div>
     <Footer />
   </section>
 </template>
@@ -9,12 +12,17 @@
 
 import Footer from '~/components/Footer.vue'
 import Header from '~/components/Header.vue'
+import Finder from '~/components/Finder.vue'
 
 export default {
   components: {
     Header,
-    Footer
-  }
+    Footer,
+    Finder,
+  },
+  methods: {
+
+  },
 }
 </script>
 
@@ -35,6 +43,13 @@ export default {
   align-items: center;
   text-align: center;
 }
+.offer-container{
+  // min-height: 120vh;
+  position: absolute;
+  top: 6rem;
+  width: 90%;
+  max-height: calc(100vh - 100px);
+}
 .fa{
   font-family: 'FontAwesome';
   &-heart{
@@ -45,6 +60,11 @@ export default {
   &-code{
     &::before{
       content: "\f121";
+    }
+  }
+  &-search{
+    &::before{
+      content: "\f002"
     }
   }
 }
